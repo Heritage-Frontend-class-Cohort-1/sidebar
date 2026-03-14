@@ -1,13 +1,28 @@
-import React from 'react'
+import axios from "axios";
+import { useEffect, useState } from "react";
 
-const Products = () => {
+export default function Products() {
+  const [products, setProducts] = useState([]);
+
+  useEffect(() => {
+    axios.get("https://dummyjson.com/products")
+      .then((res) => {
+        setProducts(res.data.products);
+      });
+  }, []);
+
   return (
     <div>
-        <h1>Products</h1>
-        <p>Here are the products I offer</p>
-        <h2>Discount on all products from March 1st to 31st March </h2>
-    </div>
-  )
-}
+      <h2>Products</h2>
 
-export default Products
+      {products.map((product) => (
+        <div key={product.id}>
+          <img src={product.images} width="150" />
+          <h3>{product.title}</h3>
+          <p>${product.price}</p>
+          <p>{product.description}</p>
+        </div>
+      ))}
+    </div>
+  );
+}
