@@ -20,7 +20,7 @@ export default function Products() {
           <img src={product.images} width="150" />
           <h3>{product.title}</h3>
           <p>${product.price}</p>
-          <p>{product.description}</p>
+          
         </div>
       ))}
     </div>
