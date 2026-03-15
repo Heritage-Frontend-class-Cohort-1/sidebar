@@ -12,6 +12,9 @@ import Promise from "./pages/dropdown/Promise";
 import Idera from "./pages/dropdown/Idera";
 import Adeboye from "./pages/dropdown/Adeboye";
 
+import Food from "./admin/Food";
+import Drinks from "./admin/Drinks";
+
 const App = () => {
   return (
     <BrowserRouter>
@@ -28,6 +31,7 @@ const App = () => {
           <Route path="idera" element={<Idera />} />
           <Route path="adeboye" element={<Adeboye />} />
         </Route>
+        
       </Routes>
     </BrowserRouter>
   );
